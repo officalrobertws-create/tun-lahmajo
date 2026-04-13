@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tun Lahmajo | Տուն Լահմաջո | Тун Лахмаджо</title>
+<meta name="description" content="Tun Lahmajo — Traditional Armenian restaurant in Yerevan. Best Lahmajo, Khinkali, and grills in the city center. Open late on weekends.">
+<meta name="keywords" content="Best Lahmajo Yerevan, Լավագույն լահմաջո, Tun Lahmajo, Armenian restaurant Yerevan, Teryan restaurant, Khinkali Yerevan">
+<meta property="og:title" content="Tun Lahmajo — The Heart of Traditional Armenian Flavor">
+<meta property="og:description" content="From crispy Lahmajos to hand-folded Khinkali. Open late in the center of Yerevan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@300;400&family=Noto+Serif+Armenian:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #C8A84B;
+    --gold-light: #E2C97E;
+    --gold-pale: #F5EDD6;
+    --brown-deep: #2C1A0E;
+    --brown-mid: #5C3D22;
+    --brown-warm: #8B5E3C;
+    --cream: #FAF6EE;
+    --cream-dark: #EDE3CF;
+    --text-dark: #1E1108;
+    --text-mid: #4A3020;
+    --text-muted: #8B7355;
+    --shadow: rgba(44,26,14,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Mono', monospace;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── LANGUAGE TOGGLE ─── */
+  #lang-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--brown-deep);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    height: 44px;
+    border-bottom: 1px solid rgba(200,168,75,0.3);
+  }
+
+  .lang-logo-small {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .lang-switcher {
+    display: flex;
+    gap: 0;
+    align-items: center;
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    color: rgba(200,168,75,0.5);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    padding: 4px 10px;
+    transition: color 0.2s;
+    border-right: 1px solid rgba(200,168,75,0.2);
+  }
+  .lang-btn:last-child { border-right: none; }
+  .lang-btn.active { color: var(--gold); }
+  .lang-btn:hover { color: var(--gold-light); }
+
+  /* ─── HEADER / NAV ─── */
+  header {
+    position: fixed;
+    top: 44px; left: 0; right: 0;
+    z-index: 999;
+    background: rgba(250,246,238,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    height: 64px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--brown-deep);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .nav-logo span { color: var(--gold); }
+
+  nav {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+
+  nav a {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold) !important;
+    color: var(--brown-deep) !important;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding-top: 108px;
+    background: var(--brown-deep);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(200,168,75,0.04) 40px,
+        rgba(200,168,75,0.04) 41px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(200,168,75,0.04) 40px,
+        rgba(200,168,75,0.04) 41px
+      );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 5vw;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 8vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--cream);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.5vw, 22px);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(250,246,238,0.7);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--brown-deep);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 14px 32px;
+    background: transparent;
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    border: 1px solid rgba(200,168,75,0.5);
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    cursor: pointer;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-1px); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(200,168,75,0.5);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 0.8s 1.2s forwards;
+  }
+  .hero-scroll::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: rgba(200,168,75,0.4);
+  }
+
+  /* ─── STATS STRIP ─── */
+  .stats-strip {
+    background: var(--gold);
+    padding: 20px 5vw;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+
+  .stat-item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 0 20px;
+    border-right: 1px solid rgba(44,26,14,0.2);
+  }
+  .stat-item:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--brown-deep);
+    display: block;
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brown-mid);
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* ─── SECTIONS ─── */
+  section {
+    padding: 80px 5vw;
+  }
+
+  .section-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 300;
+    color: var(--brown-deep);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--brown-warm); }
+
+  .section-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  /* ─── WHY US ─── */
+  #why { background: var(--cream); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    background: var(--cream-dark);
+    border: 1px solid var(--cream-dark);
+  }
+
+  .why-card {
+    background: var(--cream);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+  .why-card:hover { background: var(--gold-pale); }
+
+  .why-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .why-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    margin-bottom: 10px;
+  }
+
+  .why-card p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    line-height: 1.9;
+    color: var(--text-muted);
+  }
+
+  .why-card .why-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 1px;
+  }
+
+  /* ─── MENU HIGHLIGHTS ─── */
+  #menu { background: var(--brown-deep); }
+  #menu .section-eyebrow { color: var(--gold-light); }
+  #menu .section-eyebrow::before { background: var(--gold-light); }
+  #menu .section-title { color: var(--cream); }
+  #menu .section-subtitle { color: rgba(250,246,238,0.55); }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(200,168,75,0.15);
+  }
+
+  .menu-card {
+    background: var(--brown-deep);
+    padding: 40px 32px;
+    border: 1px solid rgba(200,168,75,0.1);
+    transition: border-color 0.25s, background 0.25s;
+    cursor: default;
+    position: relative;
+  }
+  .menu-card:hover { border-color: rgba(200,168,75,0.4); background: rgba(200,168,75,0.05); }
+
+  .menu-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: rgba(200,168,75,0.12);
+    position: absolute;
+    top: 16px; right: 24px;
+    line-height: 1;
+  }
+
+  .menu-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  .menu-card .menu-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(250,246,238,0.4);
+    margin-bottom: 16px;
+  }
+
+  .menu-card p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    line-height: 1.9;
+    color: rgba(250,246,238,0.55);
+  }
+
+  .menu-price {
+    display: inline-block;
+    margin-top: 20px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    background: rgba(200,168,75,0.1);
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ─── ATMOSPHERE ─── */
+  #atmosphere {
+    background: var(--cream);
+    padding: 80px 5vw;
+  }
+
+  .atm-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .atm-text .section-subtitle { margin-bottom: 24px; }
+
+  .atm-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .atm-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  .atm-features li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 8px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .atm-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px 180px;
+    gap: 8px;
+  }
+
+  .atm-tile {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .atm-tile:first-child {
+    grid-row: 1 / 3;
+  }
+
+  .atm-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .atm-p1 { background: var(--brown-deep); }
+  .atm-p2 { background: var(--brown-mid); }
+  .atm-p3 { background: var(--brown-warm); }
+
+  .atm-placeholder span {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: rgba(250,246,238,0.5);
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .atm-placeholder .atm-icon {
+    font-size: 28px;
+    opacity: 0.4;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials {
+    background: var(--gold-pale);
+    padding: 80px 5vw;
+    border-top: 1px solid var(--cream-dark);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .test-card {
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 2px;
+    padding: 32px;
+  }
+
+  .test-stars {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .test-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--brown-deep);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .test-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ─── CONTACT / MAP ─── */
+  #contact { background: var(--brown-deep); }
+  #contact .section-title { color: var(--cream); }
+  #contact .section-eyebrow { color: var(--gold); }
+  #contact .section-eyebrow::before { background: var(--gold); }
+
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .contact-item h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .contact-item p, .contact-item a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+  }
+  .contact-item a:hover { color: var(--gold-light); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 20px;
+  }
+
+  .hours-grid dt {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(250,246,238,0.45);
+    letter-spacing: 0.08em;
+  }
+  .hours-grid dd {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-light);
+    margin-left: 0;
+  }
+
+  .map-container {
+    border-radius: 2px;
+    overflow: hidden;
+    height: 380px;
+    border: 1px solid rgba(200,168,75,0.2);
+  }
+
+  .map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: sepia(0.3) saturate(0.8);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #120B04;
+    padding: 40px 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 1px solid rgba(200,168,75,0.15);
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+  }
+
+  .footer-brand small {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: rgba(200,168,75,0.4);
+    margin-top: 4px;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(200,168,75,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: rgba(200,168,75,0.25);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── DIVIDER ─── */
+  .ornament {
+    text-align: center;
+    color: var(--gold);
+    opacity: 0.4;
+    font-size: 18px;
+    margin: 0 0 40px;
+    letter-spacing: 16px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 700px) {
+    nav { display: none; }
+
+    .atm-layout,
+    .contact-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .atm-visual {
+      grid-template-rows: 160px 160px;
+    }
+
+    .atm-tile:first-child { grid-row: auto; }
+
+    .stats-strip {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stat-item { min-width: 120px; }
+
+    footer {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+
+    .map-container { height: 260px; }
+  }
+
+  /* ─── LANG CONTENT ─── */
+  [data-lang] { display: none; }
+  [data-lang="en"] { display: block; }
+  .inline-lang { display: none; }
+  .inline-lang.en { display: inline; }
+
+  /* Armenian font override */
+  [data-lang="am"],
+  .inline-lang.am {
+    font-family: 'Noto Serif Armenian', serif;
+  }
+</style>
+</head>
+<body>
+
+<!-- Language Bar -->
+<div id="lang-bar">
+  <span class="lang-logo-small">Tun Lahmajo · Yerevan</span>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('am')">ԱՄ</button>
+    <button class="lang-btn" onclick="setLang('ru')">RU</button>
+  </div>
+</div>
+
+<!-- Header -->
+<header>
+  <a href="#" class="nav-logo">
+    <span class="inline-lang en">Tun</span><span class="inline-lang am">Տուն</span><span class="inline-lang ru">Тун</span>
+    &nbsp;<span>Lahmajo</span>
+  </a>
+  <nav>
+    <a href="#why">
+      <span class="inline-lang en">Why Us</span>
+      <span class="inline-lang am">Մեր Մասին</span>
+      <span class="inline-lang ru">О Нас</span>
+    </a>
+    <a href="#menu">
+      <span class="inline-lang en">Menu</span>
+      <span class="inline-lang am">Ճաշացուցակ</span>
+      <span class="inline-lang ru">Меню</span>
+    </a>
+    <a href="#atmosphere">
+      <span class="inline-lang en">Atmosphere</span>
+      <span class="inline-lang am">Մթնոլort</span>
+      <span class="inline-lang ru">Атмосфера</span>
+    </a>
+    <a href="#contact" class="nav-cta">
+      <span class="inline-lang en">Reserve</span>
+      <span class="inline-lang am">Ամրագրել</span>
+      <span class="inline-lang ru">Бронь</span>
+    </a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+
+    <p class="hero-eyebrow">
+      <span class="inline-lang en">Since 2008 · Teryan Street, Yerevan</span>
+      <span class="inline-lang am">2008-ից · Տերյան փող., Երևան</span>
+      <span class="inline-lang ru">С 2008 · Улица Терян, Ереван</span>
+    </p>
+
+    <div data-lang="en">
+      <h1 class="hero-title">The Heart of<br><em>Traditional</em><br>Armenian Flavor</h1>
+      <p class="hero-sub">From famous crispy Lahmajos to juicy hand-folded Khinkali. Open late in the center of Yerevan.</p>
+    </div>
+    <div data-lang="am">
+      <h1 class="hero-title">Ավանդական հայ<br><em>խոհանոցի</em><br>սիրտը</h1>
+      <p class="hero-sub">Հայտնի바삭 լահմաջոներից մինչև հյութեղ ձեռքով ծալլած խինկալի։ Բաց ուշ Երևանի կենտրոնում։</p>
+    </div>
+    <div data-lang="ru">
+      <h1 class="hero-title">Сердце<br><em>Традиционной</em><br>Армянской Кухни</h1>
+      <p class="hero-sub">От знаменитых хрустящих ляхмаджо до сочных хинкали, сложенных вручную. Работаем допоздна в центре Еревана.</p>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#menu" class="btn-primary">
+        <span class="inline-lang en">View Menu</span>
+        <span class="inline-lang am">Ճաշացուցակ</span>
+        <span class="inline-lang ru">Смотреть меню</span>
+      </a>
+      <a href="tel:+37410538717" class="btn-outline">
+        <span class="inline-lang en">Order Delivery</span>
+        <span class="inline-lang am">Պատվիրել</span>
+        <span class="inline-lang ru">Заказать доставку</span>
+      </a>
+    </div>
+  </div>
+
+  <p class="hero-scroll">
+    <span class="inline-lang en">Scroll to explore</span>
+    <span class="inline-lang am">Ոլորել</span>
+    <span class="inline-lang ru">Прокрутите вниз</span>
+  </p>
+</section>
+
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="stat-item">
+    <span class="stat-num">2008</span>
+    <span class="stat-label" data-en="Est. Year" data-am="Հիմնադրվ." data-ru="Основан">Est. Year</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">3</span>
+    <span class="stat-label" data-en="Dining Halls" data-am="Սրահ" data-ru="Залов">Dining Halls</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">1AM</span>
+    <span class="stat-label" data-en="Weekend Close" data-am="Աշ. Փակ" data-ru="Выходные">Weekend Close</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">֏2K+</span>
+    <span class="stat-label" data-en="Starting Price" data-am="Սկ. Գին" data-ru="От цены">Starting Price</span>
+  </div>
+</div>
+
+<!-- Why Us -->
+<section id="why">
+  <p class="section-eyebrow">
+    <span class="inline-lang en">Why choose us</span>
+    <span class="inline-lang am">Ինչու ընտրել մեզ</span>
+    <span class="inline-lang ru">Почему мы</span>
+  </p>
+
+  <div data-lang="en">
+    <h2 class="section-title">More Than a<br><em>Restaurant</em></h2>
+    <p class="section-subtitle">Three reasons locals and tourists keep coming back to Tun Lahmajo.</p>
+  </div>
+  <div data-lang="am">
+    <h2 class="section-title">Ավելին, քան<br><em>ռեստորան</em></h2>
+    <p class="section-subtitle">Երեք պատճառ, որ տեղացիները և զբոսաշրջիկները վերադառնում են Տուն Լահմաջո։</p>
+  </div>
+  <div data-lang="ru">
+    <h2 class="section-title">Больше чем<br><em>ресторан</em></h2>
+    <p class="section-subtitle">Три причины, по которым гости снова и снова возвращаются в Тун Лахмаджо.</p>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">🌙</span>
+      <h3>
+        <span class="inline-lang en">Late-Night Dining</span>
+        <span class="inline-lang am">Ուշ Ճաշ</span>
+        <span class="inline-lang ru">Поздний Ужин</span>
+      </h3>
+      <p>
+        <span class="inline-lang en">One of the very few spots in central Yerevan serving full meals until 1:00 AM on weekends. Perfect for after-shows, late arrivals, and long nights out.</span>
+        <span class="inline-lang am">Երևանի կենտրոնի հազվագյուտ վայրերից մեկը, որտեղ մատուցվում են լիարժեք ճաշեր շաբաթ-կիրակի օրերին մինչև 01:00։</span>
+        <span class="inline-lang ru">Одно из немногих мест в центре Еревана, где в выходные подают полноценные блюда до 01:00 ночи.</span>
+      </p>
+      <span class="why-tag">
+        <span class="inline-lang en">Open until 1AM weekends</span>
+        <span class="inline-lang am">Բաց մինչև 01:00</span>
+        <span class="inline-lang ru">До 01:00 в выходные</span>
+      </span>
+    </div>
+
+    <div class="why-card">
+      <span class="why-icon">✦</span>
+      <h3>
+        <span class="inline-lang en">Best Value in Yerevan</span>
+        <span class="inline-lang am">Լավագույն Գին</span>
+        <span class="inline-lang ru">Лучшее Соотношение</span>
+      </h3>
+      <p>
+        <span class="inline-lang en">High-quality traditional meals starting from ֏2,000 per person. Generous portions, honest ingredients, and flavors passed down through generations.</span>
+        <span class="inline-lang am">Բարձրորակ ավանդական ուտեստներ՝ սկսած ֏2,000-ից մեկ հոգու համար։ Առատ չափաբաժիններ, անկեղծ բաղադրատոմսեր։</span>
+        <span class="inline-lang ru">Традиционные блюда высокого качества от ֏2,000 на человека. Щедрые порции, честные рецепты, вкусы поколений.</span>
+      </p>
+      <span class="why-tag">֏2,000 – ֏4,000 per person</span>
+    </div>
+
+    <div class="why-card">
+      <span class="why-icon">⬡</span>
+      <h3>
+        <span class="inline-lang en">Spacious & Welcoming</span>
+        <span class="inline-lang am">Ընդարձակ Սրահներ</span>
+        <span class="inline-lang ru">Просторные Залы</span>
+      </h3>
+      <p>
+        <span class="inline-lang en">Three large halls — indoor and outdoor — designed to accommodate groups of 5 to 8 people comfortably. Bring the whole family or a gathering of friends.</span>
+        <span class="inline-lang am">Երեք մեծ սրահ՝ ներքին և արտաքին, հարմարեցված 5-8 հոգանոց խմբերի համար։ Բերեք ամբողջ ընտանիքը։</span>
+        <span class="inline-lang ru">Три большие зоны — крытая и открытая — для групп от 5 до 8 человек. Приходите всей семьёй или компанией.</span>
+      </p>
+      <span class="why-tag">
+        <span class="inline-lang en">Indoor &amp; Outdoor seating</span>
+        <span class="inline-lang am">Ներքին &amp; արտաքին</span>
+        <span class="inline-lang ru">Крытый &amp; открытый</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- Menu Highlights -->
+<section id="menu">
+  <p class="section-eyebrow">
+    <span class="inline-lang en">Signature dishes</span>
+    <span class="inline-lang am">Ստորագրային ուտեստներ</span>
+    <span class="inline-lang ru">Фирменные блюда</span>
+  </p>
+
+  <div data-lang="en">
+    <h2 class="section-title">The <em>Classics</em></h2>
+    <p class="section-subtitle">Three dishes that define who we are and why people travel across Yerevan for them.</p>
+  </div>
+  <div data-lang="am">
+    <h2 class="section-title"><em>Դասականները</em></h2>
+    <p class="section-subtitle">Երեք ուտեստ, որոնք սահմանում են մեզ և ստիպում մարդկանց հատել Երևանը դրանց համար։</p>
+  </div>
+  <div data-lang="ru">
+    <h2 class="section-title"><em>Классика</em></h2>
+    <p class="section-subtitle">Три блюда, которые определяют нас и ради которых гости приезжают со всего Еревана.</p>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <span class="menu-num">01</span>
+      <h3>
+        <span class="inline-lang en">Lahmajo &amp; Ayran</span>
+        <span class="inline-lang am">Լահմաջո &amp; Այրան</span>
+        <span class="inline-lang ru">Ляхмаджо &amp; Айран</span>
+      </h3>
+      <p class="menu-sub">
+        <span class="inline-lang en">The Classic Combination</span>
+        <span class="inline-lang am">Դասական Զուգամիտություն</span>
+        <span class="inline-lang ru">Классическое Сочетание</span>
+      </p>
+      <p>
+        <span class="inline-lang en">Paper-thin dough baked to a perfect crisp, topped with seasoned minced meat and fresh herbs. Rolled and paired with cold, tangy Ayran — an unmissable combination.</span>
+        <span class="inline-lang am">Թղթի պես բարակ խմոր, կատարյալ կրծկալված, ավելացրած կեղծ մսով և թարմ բույսերով։ Ներս ոլորված և մատուցվող սառը, թթու Այրանի հետ։</span>
+        <span class="inline-lang ru">Тончайшее тесто, запечённое до хруста, с пряным фаршем и свежей зеленью. Свёрнутое и поданное с холодным кислым айраном — сочетание, которое нельзя пропустить.</span>
+      </p>
+      <span class="menu-price">from ֏700</span>
+    </div>
+
+    <div class="menu-card">
+      <span class="menu-num">02</span>
+      <h3>
+        <span class="inline-lang en">Khinkali</span>
+        <span class="inline-lang am">Խինկալի</span>
+        <span class="inline-lang ru">Хинкали</span>
+      </h3>
+      <p class="menu-sub">
+        <span class="inline-lang en">Rated Best in the City</span>
+        <span class="inline-lang am">Լավագույնը Քաղաքում</span>
+        <span class="inline-lang ru">Лучшие в Городе</span>
+      </p>
+      <p>
+        <span class="inline-lang en">Hand-folded and steamed to perfection. The broth stays inside until the moment you take your first bite. Rich, juicy, and deeply satisfying.</span>
+        <span class="inline-lang am">Ձեռքով ծալլված և գոլoratorhrm կատարյալ կերպով եփված։ Արգանակը մնում ներսում մինչև առաջին կծուկը։</span>
+        <span class="inline-lang ru">Лепятся вручную и доводятся до совершенства на пару. Бульон остаётся внутри до первого укуса. Сочные и насыщенные.</span>
+      </p>
+      <span class="menu-price">from ֏300 each</span>
+    </div>
+
+    <div class="menu-card">
+      <span class="menu-num">03</span>
+      <h3>
+        <span class="inline-lang en">Mixed Grill</span>
+        <span class="inline-lang am">Խառը Գրիլ</span>
+        <span class="inline-lang ru">Мясное Ассорти</span>
+      </h3>
+      <p class="menu-sub">
+        <span class="inline-lang en">Authentic BBQ &amp; Kebabs</span>
+        <span class="inline-lang am">Ավանդական Բարբեքյու</span>
+        <span class="inline-lang ru">Настоящие Кебабы &amp; Шашлык</span>
+      </p>
+      <p>
+        <span class="inline-lang en">A generous selection of marinated meats grilled over open coals. Khorovats, lule kebab, and shish — served with lavash, fresh herbs, and grilled vegetables.</span>
+        <span class="inline-lang am">Մարինացված մսի առատ ընտրանի, բաց ածուխի վրա կրծկալված։ Խոrovats, lule kebab — մատուցվող լavash-ով, թարմ բույсерov և կրծкалed բanjaрeghov.</span>
+        <span class="inline-lang ru">Богатый выбор маринованного мяса на открытом углe. Хоровац, люля-кебаб, шашлык — с лавашом, зеленью и грилованными овощами.</span>
+      </p>
+      <span class="menu-price">from ֏2,500</span>
+    </div>
+  </div>
+</section>
+
+<!-- Atmosphere -->
+<section id="atmosphere">
+  <div class="atm-layout">
+    <div class="atm-text">
+      <p class="section-eyebrow">
+        <span class="inline-lang en">The space</span>
+        <span class="inline-lang am">Տarածqtyp</span>
+        <span class="inline-lang ru">Пространство</span>
+      </p>
+
+      <div data-lang="en">
+        <h2 class="section-title">Where<br><em>Warmth</em> Lives</h2>
+        <p class="section-subtitle">Three halls built for gathering — from intimate family dinners to lively evening celebrations.</p>
+      </div>
+      <div data-lang="am">
+        <h2 class="section-title">Ջերmusությunn<br><em>Ootsə</em></h2>
+        <p class="section-subtitle">Երեք սrahl, որ ստeghtsutuyamp miak ëntanikə khmbakov:</p>
+      </div>
+      <div data-lang="ru">
+        <h2 class="section-title">Место<br><em>Тепла</em></h2>
+        <p class="section-subtitle">Три зала для встреч — от уютных семейных ужинов до шумных вечерних праздников.</p>
+      </div>
+
+      <ul class="atm-features">
+        <li>
+          <span class="inline-lang en">Main hall — seats up to 60 guests, ideal for large family gatherings</span>
+          <span class="inline-lang am">Գლавного hall — 60 հյургum hamар, ideakan мegha ëntanikakan khmbakumner</span>
+          <span class="inline-lang ru">Главный зал — до 60 гостей, идеально для больших семейных собраний</span>
+        </li>
+        <li>
+          <span class="inline-lang en">Courtyard terrace — open-air dining with traditional Armenian ambience</span>
+          <span class="inline-lang am">Բakyard terrace — open-air ë nkunt avaндakakan հhay mijavasur</span>
+          <span class="inline-lang ru">Дворовая терраса — обед под открытым небом в традиционной армянской атмосфере</span>
+        </li>
+        <li>
+          <span class="inline-lang en">Private room — perfect for groups of 5–10 seeking a quieter experience</span>
+          <span class="inline-lang am">Privage senih — ideakan 5–10 хhogi khmbakumner-um</span>
+          <span class="inline-lang ru">Отдельная комната — идеально для групп 5–10 человек, желающих уединения</span>
+        </li>
+        <li>
+          <span class="inline-lang en">Free parking available on Teryan Street after 19:00</span>
+          <span class="inline-lang am">Антреъ парковка Teryan-um 19:00-ից</span>
+          <span class="inline-lang ru">Бесплатная парковка на улице Терян после 19:00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="atm-visual">
+      <div class="atm-tile atm-p1">
+        <div class="atm-placeholder">
+          <span class="atm-icon">🏛</span>
+          <span>Main Hall</span>
+        </div>
+      </div>
+      <div class="atm-tile atm-p2">
+        <div class="atm-placeholder">
+          <span class="atm-icon">🌿</span>
+          <span>Terrace</span>
+        </div>
+      </div>
+      <div class="atm-tile atm-p3">
+        <div class="atm-placeholder">
+          <span class="atm-icon">🍷</span>
+          <span>Private Room</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <p class="section-eyebrow">
+    <span class="inline-lang en">What guests say</span>
+    <span class="inline-lang am">Հust-erin asan</span>
+    <span class="inline-lang ru">Что говорят гости</span>
+  </p>
+
+  <div data-lang="en">
+    <h2 class="section-title">Loved by<br><em>Thousands</em></h2>
+  </div>
+  <div data-lang="am">
+    <h2 class="section-title">Sirvum<br><em>Hazarov</em></h2>
+  </div>
+  <div data-lang="ru">
+    <h2 class="section-title">Любимое<br><em>Тысячами</em></h2>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-body">"The Khinkali here are honestly the best I've had in Yerevan. The broth, the dough — everything is perfect. We come every week."</p>
+      <p class="test-author">— Armine K., Yerevan · Google</p>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-body">"Пришли после театра в 11 вечера — всё свежее, порции огромные, персонал улыбчивый. Теперь это наше место."</p>
+      <p class="test-author">— Сергей Д., Москва · Tripadvisor</p>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-body">"Best value meal I had in my entire trip to Armenia. Lahmajo for 700 dram, Ayran to wash it down — unforgettable."</p>
+      <p class="test-author">— James T., London · Google</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact & Map -->
+<section id="contact">
+  <p class="section-eyebrow">
+    <span class="inline-lang en">Find us</span>
+    <span class="inline-lang am">Կgangl мez</span>
+    <span class="inline-lang ru">Найти нас</span>
+  </p>
+
+  <div data-lang="en">
+    <h2 class="section-title" style="color:var(--cream)">Visit Us in<br><em style="color:var(--gold-light)">Yerevan</em></h2>
+  </div>
+  <div data-lang="am">
+    <h2 class="section-title" style="color:var(--cream)">Eprosir Mesan<br><em style="color:var(--gold-light)">Yerevan-um</em></h2>
+  </div>
+  <div data-lang="ru">
+    <h2 class="section-title" style="color:var(--cream)">Посетите нас в<br><em style="color:var(--gold-light)">Ереване</em></h2>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-details">
+      <div class="contact-item">
+        <h4>
+          <span class="inline-lang en">Address</span>
+          <span class="inline-lang am">Հaskaghir</span>
+          <span class="inline-lang ru">Адрес</span>
+        </h4>
+        <p>Teryan 23 &amp; Teryan 25<br>Yerevan, Armenia 0012</p>
+      </div>
+
+      <div class="contact-item">
+        <h4>
+          <span class="inline-lang en">Phone</span>
+          <span class="inline-lang am">Heraxos</span>
+          <span class="inline-lang ru">Телефон</span>
+        </h4>
+        <a href="tel:+37410538717">+374 10 538 717</a>
+      </div>
+
+      <div class="contact-item">
+        <h4>Instagram</h4>
+        <a href="https://instagram.com/tunlahmajo.official" target="_blank">@tunlahmajo.official</a>
+      </div>
+
+      <div class="contact-item">
+        <h4>
+          <span class="inline-lang en">Opening Hours</span>
+          <span class="inline-lang am">Arakan Zhamер</span>
+          <span class="inline-lang ru">Часы работы</span>
+        </h4>
+        <dl class="hours-grid">
+          <dt>
+            <span class="inline-lang en">Mon–Fri</span>
+            <span class="inline-lang am">Երku–Ork</span>
+            <span class="inline-lang ru">Пн–Пт</span>
+          </dt>
+          <dd>11:00 – 23:00</dd>
+          <dt>
+            <span class="inline-lang en">Sat–Sun</span>
+            <span class="inline-lang am">Shabt–Kir</span>
+            <span class="inline-lang ru">Сб–Вс</span>
+          </dt>
+          <dd>11:00 – 01:00</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d779.3!2d44.5108!3d40.1836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abd2b16b64b7b%3A0xd44a4d7f52d1b6ae!2sTeryan%20St%2023%2C%20Yerevan%2C%20Armenia!5e0!3m2!1sen!2sam!4v1700000000000"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Tun Lahmajo location on Google Maps">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-brand">
+    Tun Lahmajo
+    <small>Traditional Armenian Restaurant · Yerevan · Est. 2008</small>
+  </div>
+  <div class="footer-links">
+    <a href="#home">
+      <span class="inline-lang en">Home</span>
+      <span class="inline-lang am">Tarber</span>
+      <span class="inline-lang ru">Главная</span>
+    </a>
+    <a href="#menu">
+      <span class="inline-lang en">Menu</span>
+      <span class="inline-lang am">Yjashacutsak</span>
+      <span class="inline-lang ru">Меню</span>
+    </a>
+    <a href="#contact">
+      <span class="inline-lang en">Contact</span>
+      <span class="inline-lang am">Kap</span>
+      <span class="inline-lang ru">Контакты</span>
+    </a>
+    <a href="https://instagram.com/tunlahmajo.official" target="_blank">Instagram</a>
+  </div>
+  <p class="footer-copy">© 2025 Տuն Lahmadjо · Teryan 23, Yerevan</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = el.dataset.lang === lang ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('.inline-lang').forEach(el => {
+      el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+    });
+
+    const statLabels = document.querySelectorAll('[data-en]');
+    statLabels.forEach(el => {
+      el.textContent = el.dataset[lang] || el.dataset.en;
+    });
+
+    document.documentElement.lang = lang === 'am' ? 'hy' : lang === 'ru' ? 'ru' : 'en';
+  }
+
+  setLang('en');
+</script>
+</body>
+</html>
